@@ -1,8 +1,8 @@
 ## SOCHI Ross Course Review
 
-##Live link: https://sochi-ross-course-review.onrender.com/
+Live link: https://sochi-ross-course-review.onrender.com/
 
-##Details
+Details:
 
 Render app for the Fall course-automation deliverables. Local ridge regression plus deterministic schedule reconciliation; four workbooks in, reviewable suggestions out. No API required.
 
