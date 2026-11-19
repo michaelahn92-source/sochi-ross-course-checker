@@ -29,6 +29,12 @@ class ReconciliationTests(unittest.TestCase):
         self.assertTrue(all(x['proposed_term']==x['term'] for x in r['suggestions']))
         self.assertFalse(any(x['action']=='Move to Not Current' for x in r['suggestions']))
 
+    def test_shifted_source_columns_do_not_become_term_updates(self):
+        row={**self.demo['courses'][1],'term':'Ross School of Business'}
+        result=reconcile([row],self.demo['schedule'],'Winter 2027',MODEL)['suggestions'][0]
+        self.assertEqual(result['action'],'Review invalid record')
+        self.assertEqual(result['proposed_term'],'Ross School of Business')
+
     def test_special_topics_do_not_silently_update(self):
         r=reconcile(self.demo['courses'],self.demo['schedule'],'Winter 2027',MODEL)
         self.assertEqual(r['suggestions'][6]['action'],'Review topic / title')

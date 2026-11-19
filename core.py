@@ -185,6 +185,8 @@ def reconcile(courses, schedule, term, model, history=None):
                'proposed_link': row['link'], 'evidence': '', 'score': None, 'decision': 'Pending', 'notes': ''}
         if not codes(row['code']) or not row['title']:
             out.update(action='Review invalid record', evidence='Missing or unrecognized identifier/title.')
+        elif any(part.strip() and norm(part) != 'not current' and not re.fullmatch(r'(?:Winter|Fall|Spring(?:/Summer)?|Summer)\s+\d{2}(?:\d{2})?(?:\s*\([AB]\))?', part.strip(), re.I) for part in row['term'].split(',')):
+            out.update(action='Review invalid record', evidence='Term Offered contains unexpected text. Check column alignment in the source copy before proposing a term or tab change.')
         elif exact:
             sim = features(row, exact)[0]
             section = re.search(r'\(\s*(\d{1,3})\s*\)', row['code'])
