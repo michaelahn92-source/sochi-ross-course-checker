@@ -1,0 +1,68 @@
+{
+  "version": "ridge-2026-11-19-v1",
+  "method": "Ridge linear regression",
+  "feature_names": [
+    "title_sequence",
+    "title_jaccard",
+    "title_containment",
+    "same_subject",
+    "title_length_ratio",
+    "same_level"
+  ],
+  "intercept": 0.053506979355026976,
+  "coefficients": [
+    -0.06955804515287621,
+    0.6654516865711804,
+    -0.12560470847558156,
+    -2.4387704288199893e-13,
+    -0.10725825775845604,
+    0.5382397787200821
+  ],
+  "review_threshold": 0.55,
+  "training_records": 2081,
+  "source_course_rows": 1143,
+  "label_source": "Weak identity labels from real experimental workbook identifiers joined to Winter 2027 Registrar schedule; distinct identifiers within subject are negative candidates. No synthetic performance claims.",
+  "evaluation": {
+    "test_pairs": 433,
+    "test_course_groups": 87,
+    "rmse": 0.34491182659524844,
+    "precision_at_055": 0.5871559633027523,
+    "recall_at_055": 0.5565217391304348,
+    "true_positives": 64,
+    "false_positives": 45,
+    "false_negatives": 51,
+    "title_similarity_baseline_rmse": 0.462764597350593,
+    "validation_mse": 0.1211771615068011,
+    "alpha": 0.1,
+    "limitation": "Weak labels from exact course identifiers, not human-adjudicated identity or renumbering labels. Metrics do not establish real-world renumbering accuracy. Split by source course identifier; target-catalog rows may recur as negative candidates."
+  },
+  "seed": 42,
+  "snapshots": [
+    {
+      "file": "general_grad.xlsx",
+      "sha256": "10a5517c13ccb06a50a95cbfe3ec0143ed3020213824784388159af54e21ef13",
+      "records": 521
+    },
+    {
+      "file": "general_undergrad.xlsx",
+      "sha256": "08970406e404f7cb90939280362bf175ac1db4c94e2bc578c71e470b5de84554",
+      "records": 524
+    },
+    {
+      "file": "ross_bba.xlsx",
+      "sha256": "78e49f3d9a575af89530621a2e64824b0dbb24b93f085851e76908a4cb416dac",
+      "records": 32
+    },
+    {
+      "file": "ross_mba.xlsx",
+      "sha256": "2e2d1e6357af0ab93f44e71c446bf6d14c97e86e562778893e377e27cd770555",
+      "records": 66
+    }
+  ],
+  "schedule_sha256": "8e886f4ed199b82dacd36273329f351ef8e916607839186cb31e26ae1ee7a3a4",
+  "split": {
+    "train_course_groups": 260,
+    "validation_course_groups": 87,
+    "test_course_groups": 87
+  }
+}

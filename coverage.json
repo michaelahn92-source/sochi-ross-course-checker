@@ -1,0 +1,98 @@
+[
+  {
+    "school": "Ross School of Business",
+    "url": "https://michiganross.umich.edu/course-catalog",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "LSA",
+    "url": "https://ro.umich.edu/calendars/schedule-classes",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "School of Education",
+    "url": "https://soe.umich.edu/academics-admissions/class-schedule",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "Law",
+    "url": "https://michigan.law.umich.edu/course-catalog",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "Environment and Sustainability",
+    "url": "https://seas.umich.edu/academics/resources/courses",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "School of Information",
+    "url": "https://www.si.umich.edu/programs/courses",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "Public Policy",
+    "url": "https://fordschool.umich.edu/courses",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "Social Work",
+    "url": "https://ssw.umich.edu/courses",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "Taubman Architecture and Urban Planning",
+    "url": "https://taubmancollege.umich.edu/urbanplanning/students/course-list",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "Engineering",
+    "url": "https://bulletin.engin.umich.edu/courses/",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "Public Health",
+    "url": "https://sph.umich.edu/research-education/courses/",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "Nursing",
+    "url": "https://nursing.umich.edu/program_plans/course.php",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "Stamps",
+    "url": "https://stamps.umich.edu/courses",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "Pharmacy",
+    "url": "https://pharmacy.umich.edu/pharmacy-programs/course-catalog/",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Full descriptions, eligibility, cross-listing, renumbering, links and A/B sessions. School-specific HTML import is not implemented; access must be checked by the reviewer."
+  },
+  {
+    "school": "PitE",
+    "url": "https://lsa.umich.edu/pite",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Cheat sheet calls for contacting PitE for upcoming courses. Confirm exceptional topics and eligibility manually."
+  },
+  {
+    "school": "Atlas / Wolverine Access",
+    "url": "https://csprod.dsc.umich.edu/services/coursecatalog",
+    "automatic": "Identifier matching against an uploaded central Registrar schedule; title-based discovery candidates.",
+    "manual": "Login required for some views. No login scraping or direct Atlas API integration; use the sanctioned schedule export."
+  }
+]

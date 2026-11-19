@@ -1,0 +1,145 @@
+{
+  "notice": "Synthetic schedule; public course titles illustrate the review workflow. No real offering claims.",
+  "courses": [
+    {
+      "dataset": "Ross MBA",
+      "sheet": "Courses",
+      "row": 2,
+      "title": "Erb Institute Seminar",
+      "code": "STRATEGY 525",
+      "term": "Fall 26",
+      "link": "",
+      "tags": "",
+      "school": "",
+      "not_current": false
+    },
+    {
+      "dataset": "Ross MBA",
+      "sheet": "Not Current",
+      "row": 2,
+      "title": "Business and Human Rights",
+      "code": "BL 530",
+      "term": "Not Current",
+      "link": "",
+      "tags": "",
+      "school": "",
+      "not_current": true
+    },
+    {
+      "dataset": "Ross BBA",
+      "sheet": "Courses",
+      "row": 2,
+      "title": "Developing Global Competency",
+      "code": "BA 320",
+      "term": "Fall 26 (A)",
+      "link": "",
+      "tags": "",
+      "school": "",
+      "not_current": false
+    },
+    {
+      "dataset": "Ross BBA",
+      "sheet": "Not Current",
+      "row": 2,
+      "title": "The Corporation in Society",
+      "code": "STRATEGY 411",
+      "term": "Not Current",
+      "link": "",
+      "tags": "",
+      "school": "",
+      "not_current": true
+    },
+    {
+      "dataset": "General Graduate",
+      "sheet": "Courses",
+      "row": 2,
+      "title": "Fluvial Ecosystems",
+      "code": "EAS 520",
+      "term": "Fall 26",
+      "link": "",
+      "tags": "",
+      "school": "",
+      "not_current": false
+    },
+    {
+      "dataset": "General Graduate",
+      "sheet": "Courses",
+      "row": 3,
+      "title": "Global Food Systems Policy",
+      "code": "NUTR 644",
+      "term": "Winter 25",
+      "link": "",
+      "tags": "",
+      "school": "",
+      "not_current": false
+    },
+    {
+      "dataset": "General Undergraduate",
+      "sheet": "Courses",
+      "row": 2,
+      "title": "Nonviolence: From Montgomery to the World",
+      "code": "AAS 104 (004)",
+      "term": "Fall 26",
+      "link": "",
+      "tags": "",
+      "school": "",
+      "not_current": false
+    },
+    {
+      "dataset": "General Undergraduate",
+      "sheet": "Not Current",
+      "row": 2,
+      "title": "Organizing for Global Justice",
+      "code": "ALA 470",
+      "term": "Not Current",
+      "link": "",
+      "tags": "",
+      "school": "",
+      "not_current": true
+    }
+  ],
+  "schedule": [
+    {
+      "code": "STRATEGY 525",
+      "title": "Erb Institute Seminar",
+      "section": "001",
+      "term": "Winter 2027",
+      "link": "https://ro.umich.edu/calendars/schedule-classes"
+    },
+    {
+      "code": "BL 530",
+      "title": "Business and Human Rights",
+      "section": "001",
+      "term": "Winter 2027",
+      "link": "https://ro.umich.edu/calendars/schedule-classes"
+    },
+    {
+      "code": "BA 320",
+      "title": "Developing Global Competency",
+      "section": "001",
+      "term": "Winter 2027",
+      "link": "https://ro.umich.edu/calendars/schedule-classes"
+    },
+    {
+      "code": "EAS 520",
+      "title": "Fluvial Ecosystems",
+      "section": "001",
+      "term": "Winter 2027",
+      "link": "https://ro.umich.edu/calendars/schedule-classes"
+    },
+    {
+      "code": "AAS 104",
+      "title": "Different Special Topic",
+      "section": "003",
+      "term": "Winter 2027",
+      "link": "https://ro.umich.edu/calendars/schedule-classes"
+    },
+    {
+      "code": "ENVIRON 999",
+      "title": "Climate and Sustainability Futures (fictional example)",
+      "section": "001",
+      "term": "Winter 2027",
+      "link": "https://ro.umich.edu/calendars/schedule-classes"
+    }
+  ]
+}
