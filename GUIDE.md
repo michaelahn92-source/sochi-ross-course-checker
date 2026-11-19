@@ -65,3 +65,10 @@ Production: gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 120 
 ## Hairline catalog drawers
 
 The catalog is an interactive isometric line figure: pointer selection opens one drawer, with neighboring changes staggered by distance. It uses Hairline’s unchanged engine and bench. Open /hairline-catalog.html?play=1 to run its tour. The drawer labels correspond to the four course lists; the figure is illustrative, not a data chart.
+
+
+## Predict spreadsheet categories
+
+Use Sort courses into spreadsheet categories. Paste one course per line as CODE | Title | optional description, or load a review and choose Categorize all courses in the loaded review. The model predicts the original Subject, Functional Area and Sustainability Subtags labels, supports multiple labels and sorts the output by suggested Subject. Edit the proposed labels and export the categories CSV. Existing spreadsheet labels are never overwritten. Analyze exports also include suggested category columns.
+
+This is a separate multilabel ridge linear regression trained on 678 unique active courses in the four original workbooks. Empty label cells are excluded for their label family. Course identifiers are grouped across train, validation and test; vocabulary comes only from training text, thresholds from validation. Subject held-out micro F1 is 0.656; Sustainability Subtags 0.593. Functional Area is weak (0.273 F1, only 37 training labeled courses) and always needs close review. Title/department features are the validated input; optional descriptions are unvalidated extra text. No API or LLM is used. Reproduce with python categories.py (NumPy required only for training). Full metrics: reports/category_evaluation.json.

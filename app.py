@@ -9,8 +9,10 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 from core import ROOT, reconcile, schedule_rows, workbook_rows
+from categories import predict, attach
 
 MODEL = json.loads((ROOT/'models/ridge.json').read_text())
+CATEGORY_MODEL = json.loads((ROOT/'models/categories.json').read_text())
 MAX_BODY = 30_000_000
 STATIC = {'/':('index.html','text/html'), '/app.js':('app.js','text/javascript'), '/style.css':('style.css','text/css'),
           '/hairline-catalog.html':('hairline-catalog.html','text/html'), '/guide':('GUIDE.md','text/plain'),
@@ -42,6 +44,7 @@ def application(environ, start_response):
         if path == '/demo':
             demo = json.loads((ROOT/'demo.json').read_text())
             result = reconcile(demo['courses'],demo['schedule'],'Winter 2027',MODEL)
+            attach(result,CATEGORY_MODEL)
             result['demo'] = True
             result['warnings'].insert(0,'DEMONSTRATION ONLY: offering data is synthetic and is not the official Winter 2027 schedule.')
             return respond(start_response,'200 OK',result)
@@ -51,7 +54,7 @@ def application(environ, start_response):
             name,mime = STATIC[path]
             return respond(start_response,'200 OK',(ROOT/name).read_bytes(),mime)
         return respond(start_response,'404 Not Found',{'error':'Page not found.'})
-    if method != 'POST' or path not in {'/analyze','/umich-review'}:
+    if method != 'POST' or path not in {'/analyze','/umich-review','/categorize'}:
         return respond(start_response,'405 Method Not Allowed',{'error':'Method not allowed.'})
     try:
         length = int(environ.get('CONTENT_LENGTH') or 0)
@@ -60,6 +63,16 @@ def application(environ, start_response):
         if 'application/json' not in environ.get('CONTENT_TYPE',''):
             raise ValueError('Expected JSON uploads.')
         body = json.loads(environ['wsgi.input'].read(length))
+        if path == '/categorize':
+            rows=body.get('courses',[])
+            if not isinstance(rows,list) or not 1 <= len(rows) <= 2000:
+                raise ValueError('Provide between 1 and 2,000 courses.')
+            for row in rows:
+                if not isinstance(row,dict) or not str(row.get('title','')).strip() or len(str(row.get('title',''))) > 1000 or len(str(row.get('description',''))) > 4000:
+                    raise ValueError('Each course needs a title under 1,000 characters and optional description under 4,000 characters.')
+            output=[predict(row,CATEGORY_MODEL) for row in rows]
+            output.sort(key=lambda r:(', '.join(r['categories']['Subject']['labels']),r['title']))
+            return respond(start_response,'200 OK',{'courses':output,'evaluation':CATEGORY_MODEL['evaluation'],'method':CATEGORY_MODEL['method'],'training_courses':CATEGORY_MODEL['training_courses']})
         if path == '/umich-review':
             key = os.environ.get('UMGPT_API_KEY')
             if not key:
@@ -103,6 +116,7 @@ def application(environ, start_response):
                 raise ValueError('Historical schedules need an explicit term.')
             history[ht] = schedule_rows(uploaded(item),ht)
         result = reconcile(courses,schedule,term,MODEL,history)
+        attach(result,CATEGORY_MODEL)
         result['warnings'].extend(warnings)
         result['demo'] = False
         return respond(start_response,'200 OK',result)

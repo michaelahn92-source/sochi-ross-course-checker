@@ -79,6 +79,8 @@ def workbook_rows(blob, dataset):
             termi = col({'term offered'})
             li = col({'course link'}, 5 if kind == 'not current' else None)
             subj = col({'subject', 'course subject', 'social causes'})
+            functional = col({'functional area'})
+            sustainability = col({'sustainability subtags'})
             school = col({'affiliated school'})
             for n, cells in enumerate(values, 2):
                 if n > 12000 or len(cells) > 100:
@@ -94,6 +96,7 @@ def workbook_rows(blob, dataset):
                     link = ''
                 rows.append({'dataset': dataset, 'sheet': sheet.title, 'row': n, 'title': title,
                              'code': code, 'term': get(termi), 'link': link, 'tags': get(subj),
+                             'functional_area': get(functional), 'sustainability_subtags': get(sustainability),
                              'school': get(school), 'not_current': kind == 'not current'})
     finally:
         book.close()
