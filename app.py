@@ -3,6 +3,7 @@ import base64
 import io
 import json
 import os
+import secrets
 import re
 import urllib.error
 import urllib.request
@@ -63,6 +64,9 @@ def application(environ, start_response):
             key = os.environ.get('UMGPT_API_KEY')
             if not key:
                 return respond(start_response,'503 Service Unavailable',{'error':'Optional UMich review is not configured. Use Glen’s toolkit link, or set UMGPT_API_KEY on Render. Core review works without it.'})
+            access = os.environ.get('UMGPT_REVIEW_TOKEN', '')
+            if not access or not secrets.compare_digest(str(body.get('review_token', '')), access):
+                return respond(start_response,'403 Forbidden',{'error':'Optional review requires the project review token. Core analysis needs no token.'})
             rows = body.get('courses',[])
             if not isinstance(rows,list) or not 1 <= len(rows) <= 10:
                 raise ValueError('Choose between 1 and 10 courses for optional review.')

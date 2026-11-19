@@ -30,7 +30,7 @@ Before publishing through WordPress, manually add the new semester’s valid lab
 
 ## Optional U-M toolkit
 
-Core analysis makes no network calls and needs no API key. Glenn’s BUS-UMSI-for-Impact toolkit was successfully tested on November 19, 2026 using gpt-4.1-nano. The live app’s optional U-M review button requires UMGPT_API_KEY set privately in Render environment settings. It sends at most ten public course titles/identifiers to https://api.toolkit.umgpt.umich.edu/v1/messages. Never place the key in source code or the browser. Without the key, use the Open Glen’s toolkit link. U-M results are suggestions; they cannot establish offerings or approve changes.
+Core analysis makes no network calls and needs no API key. Glenn’s BUS-UMSI-for-Impact toolkit was successfully tested on November 19, 2026 using gpt-4.1-nano. The live app’s optional U-M review button requires UMGPT_API_KEY and a separate UMGPT_REVIEW_TOKEN set privately in Render environment settings. The reviewer enters the project review token to prevent public use of the funded key. It sends at most ten public course titles/identifiers to https://api.toolkit.umgpt.umich.edu/v1/messages. Never place the key in source code or the browser. Without the key, use the Open Glen’s toolkit link. U-M results are suggestions; they cannot establish offerings or approve changes.
 
 ## Model and limits
 
