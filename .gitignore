@@ -7,3 +7,5 @@ reports/source_documents.json
 reports/email_review.json
 reports/*screenshot*
 *.log
+reports/*.jpg
+reports/*.png

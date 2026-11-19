@@ -1,0 +1,16 @@
+{
+  "course_records": 1143,
+  "schedule_entries": 24001,
+  "counts": {
+    "Update term offered": 159,
+    "Review missing offering": 266,
+    "Review possible renumbering": 31,
+    "Review topic / title": 439,
+    "Keep Not Current / review": 196,
+    "Reactivate course": 45,
+    "Review invalid record": 7
+  },
+  "discovery_candidates": 17,
+  "seconds": 1.55,
+  "source": "Four experimental workbooks and official Winter 2027 All classes CSV, downloaded November 19, 2026"
+}
